@@ -10,6 +10,7 @@ class CategoryForm extends React.Component {
         super(props);
         this.state = this.props.category || emptyState;
     }
+
     handleChange = (event) => {
         const { value } = event.target;
         this.setState({title: value});
@@ -27,7 +28,7 @@ class CategoryForm extends React.Component {
                 <input
                     type='text'
                     name='title'
-                    placeholder='title'
+                    placeholder="title"
                     value={this.state.title}
                     onChange={this.handleChange}
                 />
@@ -39,7 +40,7 @@ class CategoryForm extends React.Component {
 
 CategoryForm.propTypes = {
     category: PropTypes.object,
-    onComplete : PropTypes.func,
+    onComplete: PropTypes.func,
 };
 
 export default CategoryForm;

@@ -6,14 +6,6 @@ import CategoryForm from '../category-form/category-form';
 import CategoryItem from '../category-item/category-item';
 
 class Dashboard extends React.Component {
-    handleRemoveCategory = (categoryToRemove) => {
-        this.setState((previousState) => {
-            return (
-                this.props.categories: previousState.props.categories.filter(currentCategory => currentCategory.id !== categoryToRemove.id)
-            )
-        })
-    };
-
   render() {
     console.log(this.props);
     return (
@@ -22,7 +14,6 @@ class Dashboard extends React.Component {
                 <ul>
                     { this.props.categories.map(currentCategory => <CategoryItem
                         currentCategory={currentCategory}
-                        handleRemoveCategory={this.handleRemoveCategory}
                     />)}  {/*eslint-disable-line*/}
                 </ul>
             </div>
@@ -40,6 +31,7 @@ const mapStateToProps = (state) => {
     categories: state,
   };
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     categoryCreate: (category) => {
