@@ -9,14 +9,11 @@ class Dashboard extends React.Component {
   render() {
     console.log(this.props);
     return (
-            <div>
-                <CategoryForm onComplete={this.props.categoryCreate}/>
-                <ul>
-                    { this.props.categories.map(currentCategory => <CategoryItem
-                        currentCategory={currentCategory}
-                    />)}  {/*eslint-disable-line*/}
-                </ul>
-            </div>
+        <div>
+            <CategoryForm categoryCreate={this.props.categoryCreate}/>\
+            { this.props.categories.map((currentCategory, i) => <CategoryItem
+                currentCategory={currentCategory} key={i}/>)}
+        </div>
     );
   }
 }

@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const emptyState = {
-    title: '',
-};
-
 class CategoryUpdateForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.category || emptyState;
+        this.state = {};
+        this.state.title = this.props.currentCategory.title || '';
+        this.state.updatedCategory = this.props.currentCategory;
     }
 
     handleChange = (event) => {
@@ -18,7 +16,8 @@ class CategoryUpdateForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.onComplete(this.state);
+        this.state.updatedCategory.title = this.state.title;
+        this.props.categoryUpdate(this.state.updatedCategory);
     };
 
     render() {
@@ -38,8 +37,8 @@ class CategoryUpdateForm extends React.Component {
 }
 
 CategoryUpdateForm.propTypes = {
-    category: PropTypes.object,
-    onComplete: PropTypes.func,
+    categoryUpdate: PropTypes.func,
+    currentCategory: PropTypes.object,
 };
 
 export default CategoryUpdateForm;

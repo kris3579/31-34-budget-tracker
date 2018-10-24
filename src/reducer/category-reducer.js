@@ -4,7 +4,7 @@ export default (state = [], { type, payload }) => {
       return [...state, payload];
     case 'CATEGORY_UPDATE':
       return state.map((currentCategory) => {
-        return currentCategory.id === payload.id ? payload : currentCategory;
+        return (currentCategory.id === payload.id ? payload : currentCategory);
       });
     case 'CATEGORY_REMOVE':
       return state.filter(currentCategory => currentCategory.id !== payload.id);

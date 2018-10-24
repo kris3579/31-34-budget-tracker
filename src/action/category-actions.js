@@ -1,4 +1,4 @@
-export const create = ({ title }) => {
+export const create = (title) => {
   return {
     type: 'CATEGORY_CREATE',
     payload: {

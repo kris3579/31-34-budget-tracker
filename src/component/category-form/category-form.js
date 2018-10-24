@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const emptyState = {
-    title: '',
-};
-
 class CategoryForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.category || emptyState;
+        this.state = {};
+        this.state.title = '';
     }
 
     handleChange = (event) => {
@@ -18,7 +15,7 @@ class CategoryForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.onComplete(this.state);
+        this.props.categoryCreate(this.state.title);
     };
 
     render() {
@@ -39,8 +36,7 @@ class CategoryForm extends React.Component {
 }
 
 CategoryForm.propTypes = {
-    category: PropTypes.object,
-    onComplete: PropTypes.func,
+    categoryCreate: PropTypes.func,
 };
 
 export default CategoryForm;
