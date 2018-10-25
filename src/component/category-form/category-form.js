@@ -20,11 +20,10 @@ class CategoryForm extends React.Component {
 
     render() {
         return (
-            <form
-                onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
                 <input
-                    type='text'
-                    name='title'
+                    type="text"
+                    name="title"
                     placeholder="title"
                     value={this.state.title}
                     onChange={this.handleChange}

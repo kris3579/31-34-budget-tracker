@@ -33,7 +33,7 @@ webpackConfig.module.rules = [
       loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env', '@babel/react'],
-        plugins: ['@babel/plugin-proposal-class-properties'],
+        plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-proposal-object-rest-spread'],
         cacheDirectory: true,
       },
     },

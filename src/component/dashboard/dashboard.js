@@ -31,8 +31,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    categoryCreate: (category) => {
-      dispatch(categoryActions.create(category));
+    categoryCreate: (title) => {
+      dispatch(categoryActions.create(title));
     },
   };
 };

@@ -4,10 +4,12 @@ export const create = (title) => {
     payload: {
       id: Math.random(),
       title,
+      expenses: [],
       createdOn: new Date(),
     },
   };
 };
+
 export const update = (category) => {
   return {
     type: 'CATEGORY_UPDATE',
