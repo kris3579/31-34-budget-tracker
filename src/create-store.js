@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
-import categoryReducer from './reducer/category-reducer';
+import mainReducer from './reducer/main-reducer';
 
 export default () => {
-  return createStore(categoryReducer);
+  return createStore(mainReducer);
 };

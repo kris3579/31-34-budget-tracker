@@ -15,7 +15,8 @@ class ExpenseForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.expenseCreate(this.state.title);
+        console.log(this.props.currentCategory.id);
+        this.props.expenseCreate(this.state.title, this.props.currentCategory.id);
     };
 
     render() {

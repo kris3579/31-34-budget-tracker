@@ -16,7 +16,7 @@ class CategoryItem extends React.Component {
             <button onClick={this.props.categoryRemove.bind(null, this.props.currentCategory)}>
                 Delete Category
             </button>
-            {console.log(this.props.currentCategory.expenses)}
+            {console.log(this.props.currentCategory)}
             {this.props.currentCategory.expenses.map((currentExpense, i) => <ExpenseItem
                 currentExpense={currentExpense}
                 key={i}
@@ -48,8 +48,8 @@ const mapDispatchToProps = (dispatch) => {
     categoryUpdate: (category) => {
       dispatch(categoryActions.update(category));
     },
-    expenseCreate: (title) => {
-      dispatch(expenseActions.create(title));
+    expenseCreate: (title, sectionId) => {
+      dispatch(expenseActions.create(title, sectionId));
     },
   };
 };

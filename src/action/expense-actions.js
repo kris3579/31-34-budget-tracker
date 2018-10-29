@@ -1,9 +1,10 @@
-export const create = (title) => {
+export const create = (title, categoryId) => {
   return {
     type: 'EXPENSE_CREATE',
     payload: {
       id: Math.random(),
       title,
+      categoryId,
       createdOn: new Date(),
     },
   };

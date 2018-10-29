@@ -17,8 +17,10 @@ export default (state = defaultState, { type, payload }) => {
 
     case 'EXPENSE_CREATE':
       categoryId = payload.categoryId; // eslint-disable-line
+      console.log(state);
       categoryExpenses = state[categoryId];
-      updatedState = [...categoryExpenses, payload];
+      updatedExpenses = [...categoryExpenses, payload];
+      console.log(updatedExpenses);
       return { ...state, [categoryId]: updatedExpenses };
 
     case 'EXPENSE_UPDATE':
